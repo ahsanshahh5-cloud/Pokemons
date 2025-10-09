@@ -1,0 +1,42 @@
+.Poke_Name {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.Poke_Name:hover{
+  transform: scale(1.05) rotate(2deg);
+}
+
+.LinkCSS a {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.LinkCSS a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #ffeb3b, #ffc107, #ff9800);
+  transition: width 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.LinkCSS a:hover::after {
+  width: 100%;
+}
+
+.LinkCSS a:hover {
+  color: #ffeb3b;
+}
+

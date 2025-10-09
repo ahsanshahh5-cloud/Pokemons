@@ -1,0 +1,31 @@
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+function Pokemons_Types() {
+    const{ pokemonsT } = useParams();
+    const[data, setData] = useState([]);
+        useEffect(() => {
+            fetch(`https://pokeapi.co/api/v2/type/${pokemonsT}`)
+                .then((response) => response.json())
+                .then((data) => setData(data))
+        }, [])
+  return (
+    <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+    <h1 style={{textAlign: 'center'}}>Pokemons</h1>
+    <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '2rem'}}>
+        {
+            data?.pokemon?.map((item, index) => {
+                return(
+                    <div style={{border: '10px solid #ef5350',backgroundColor: 'rgba(239, 83, 80, 0.85)',height: '300px',textAlign: 'center',width: '500px',display: 'flex',flexDirection: 'column',justifyContent: 'center',alignItems: 'center',color: 'white',borderRadius: '15px',boxShadow: '0px 0px 20px rgba(0,0,0,0.3)',}}>
+                        <h1>{item.pokemon.name.toUpperCase()}</h1>
+                        <h2>Slot: {item.slot}</h2>
+                    </div>
+                )
+            })
+        }
+    </div>
+    </div>
+  )
+}
+
+export default Pokemons_Types
