@@ -326,7 +326,10 @@ html, body {
   .stats-container {
     transform: none;
     padding: 10px;
-    width: 90%;
+    width: 50%;           /* Reduce the size of the container */
+    max-width: 500px;     /* Optional: limit maximum width */
+    margin: 50px auto;    /* Centers horizontally and adds top/bottom space */
+    padding: 20px; 
   }
 
   .stats-header {
@@ -946,14 +949,14 @@ html, body {
 
 @media (max-width: 600px) {
   .menu {
-    font-size: 13px;
-    gap: 30px;
+    font-size: 10px;
+    gap: 20px;
   }
   .small_h1 {
     font-size: 10px !important;
   }
   .large_h1{
-    font-size: 60px !important;
+    font-size: 40px !important;
   }
   .main_img{
     width: 50%;
