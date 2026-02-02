@@ -696,7 +696,7 @@ html, body {
 }
 
 .tab-button.active {
-  border-bottom: 2px solid blue;
+  border-bottom: 4px solid black;
   font-weight: bold;
 }
 
